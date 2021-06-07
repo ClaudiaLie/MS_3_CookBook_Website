@@ -16,6 +16,14 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def index():
+    # on entering the index page clear any filters and sort criteria that have
+    # been applied to search results.
+    session["filters"] = {}
+    session["sort"] = {}
+    return render_template("index.html", title_text='A tavola')
+
+
 @app.route("/recipes")
 def recipes():
     recipes = mongo.db.recipes.find()
