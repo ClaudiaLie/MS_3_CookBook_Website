@@ -3,18 +3,12 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-        <h4 class="center-align"> Log In here: </h4>
+        <h4 class="center-align"> Log In </h4>
         <div class="row"> 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="user_name" name="user_name" type="text" class="validate">
+                    <input id="username" name="username" type="text" class="validate">
                     <label for="user_name">User Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" name="email" type="email" class="validate">
-                    <label for="email">Email</label>
                 </div>
             </div>
             <div class="row">
@@ -25,7 +19,7 @@
             </div>
         </div>
         <div class="row">
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Log in</a>
+            <button type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Log In</button>
         </div>
     </form>
 </div>

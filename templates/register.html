@@ -8,7 +8,7 @@
     <h4 class="center-align"> Register now! </h4>
         <div class="row">
             <div class="input-field col s6">
-                <input id="first_name" name="first_name" type="text" class="validate">
+                <input id="first_name" name="first_name" type="text" class="validate" required>
                 <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="user_name" name="user_name" type="text" class="validate">
+                <input id="username" name="username" type="text" class="validate" minlenght="5" maxlenght="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
                 <label for="user_name">User Name</label>
             </div>
         </div>
@@ -30,12 +30,12 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" name="password" type="password" class="validate">
+                <input id="password" name="password" type="password" minlenght="5" maxlenght="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
         <div class="row">
-            <a class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Register</a>
+            <button type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">local_dining</i>Register</button>
         </div>
     </form>
 </div>
