@@ -2,6 +2,7 @@ import os
 from flask import (Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -17,11 +18,17 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    # on entering the index page clear any filters and sort criteria that have
-    # been applied to search results.
-    session["filters"] = {}
-    session["sort"] = {}
     return render_template("index.html", title_text='A tavola')
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    return render_template("login.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 @app.route("/recipes")
