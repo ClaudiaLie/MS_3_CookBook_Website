@@ -18,11 +18,12 @@
         <li>
             <div class="collapsible-header text-shadow #efebe9 brown lighten-5">
                 <i class="material-icons left">local_dining</i>
-                <strong>{{ recipe.recipe_name }}</strong>
-                {% if recipe.recipe_allergen == "Gluten" %}
+                {% if recipe.recipe_allergen == "yes" %}
                     <i class="fas fa-hand-holding-heart tooltipped"
-                    data-position="right" data tooltip="Gluten"></i>
-                {% endif %} 
+                    data-position="top" data-tooltip="Allergens present in this recipe"></i>
+                {% endif %}
+                <strong>{{ recipe.recipe_name }}</strong>
+                 
                 
             </div>
             <div class="collapsible-body">
