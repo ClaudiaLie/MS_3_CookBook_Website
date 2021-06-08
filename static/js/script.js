@@ -1,6 +1,8 @@
+   
+$(".dropdown-trigger").dropdown();
 
 $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-       
-$(".dropdown-trigger").dropdown();
+  $('.collapsible').collapsible();
+  $('.tooltipped').tooltip();
+  $('.sidenav').sidenav();
+});

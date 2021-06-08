@@ -13,4 +13,24 @@
         {{ recipe.recipe_allergen }}<br>
     {% endfor %}
 
+    <ul class="collapsible">
+        {% for recipe in recipes %} 
+        <li>
+            <div class="collapsible-header text-shadow #efebe9 brown lighten-5">
+                <i class="material-icons left">local_dining</i>
+                <strong>{{ recipe.recipe_name }}</strong>
+                {% if recipe.recipe_allergen == "Gluten" %}
+                    <i class="fas fa-hand-holding-heart tooltipped"
+                    data-position="right" data tooltip="Gluten"></i>
+                {% endif %} 
+                
+            </div>
+            <div class="collapsible-body">
+                <span>{{ recipe.recipe_ingredients}}</span> : {{ recipe.recipe_serving }}
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
