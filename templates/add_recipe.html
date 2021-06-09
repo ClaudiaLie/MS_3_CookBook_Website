@@ -4,24 +4,33 @@
     <h3 class="text-shadow"> Add Recipe </h3>
 
     <div class="row card-panel grey lighten-5">
-      <form class="col s12" method="POST" action="">
+      <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="row">
           <div class="input-field col s12">
             <p>Recipe name:</p>
             <input id="recipe_name" type="text" name="recipe_name" class="validate" required>
           </div>
         </div>
+        <!-- Add Ingredients and send new additions to the database -->
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s12" id="recipe_ingredients" name="recipe_ingredients">
               <p>Ingredients:</p>
-              <div class="chips chips-autocomplete" id="recipe_ingredients"></div>
+              {% for ingredient in ingredients %}
+                <div class="chips chips-autocomplete">
+                  <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
+                </div>
+              {% endfor %}
               <p>(Press Enter after each ingredient)</p>
           </div>
         </div>
+        <!-- Allergens -->
         <div class="row">
-          <div class="input-field col s12 recipe_allergen">
-            <select multiple required>
+          <div class="input-field col s12">
+            <select multiple id="recipe_allergen" name="recipe_allergen" required>
               <option value="" disabled selected>Click to select the allergens</option>
+              {% for ingredient in ingredients %}
+              <option value="{{ allergen.recipe_allergen }}">{{ allergen.recipe_allergen }}</option>
+              {% endfor %}
               <option value="1">Gluten</option>
               <option value="2">Lactose</option>
               <option value="3">Tree Nuts</option>
@@ -30,44 +39,48 @@
             </select>
           </div>
         </div>
+        <!-- Short description of the recipe -->
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
             <textarea id="recipe_description" class="materialize-textarea" required></textarea>
           </div>
         </div>
+        <!-- Steps of the recipe -->
         <div class="row">
           <div class="input-field col s12">
             <p>Describe the steps to prepare your recipe:</p>
             <textarea id="recipe_steps" class="materialize-textarea" required></textarea>
           </div>
         </div>
+        <!-- Category of the dish -->
         <p>Select a category: </p>
         <p>
           <label>
-            <input name="group1" id="recipe.category" type="radio" />
+            <input name="group1" id="recipe_category" type="radio" />
             <span>Appetizer</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" id="recipe.category" type="radio" />
+            <input name="group1" id="recipe_category" type="radio" />
             <span>First Course</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" id="recipe.category" type="radio" />
+            <input name="group1" id="recipe_category" type="radio" />
             <span>Second Course</span>
           </label>
         </p>
         <p>
           <label>
-            <input name="group1" id="recipe.category" type="radio" />
+            <input name="group1" id="recipe_category" type="radio" />
             <span>Dessert</span>
           </label>
         </p>
         <br>
+        <!-- Upload an image -->
         <div class="file-field input-field">
           <div class="btn brown #a1887f brown lighten-1">
             <span>Choose image</span>
@@ -77,7 +90,19 @@
             <input class="file-path validate" type="text" placeholder="Upload a picture of your dish!">
           </div>
         </div>
+        <br>
+        <!-- Submit button -->
+        <div class="row">
+          <div class="col s12 center-align">
+            <button class="btn waves-effect waves-light btn-large center-align #a1887f brown lighten-1" type="submit">Submit
+              <i class="material-icons right">restaurant_menu</i>
+            </button>
+          </div>
+        </div>
+        
       </form>
+      
+      
     </div>
 
 {% endblock %}

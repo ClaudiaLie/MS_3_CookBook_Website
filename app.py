@@ -104,9 +104,26 @@ def recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    return render_template("add_recipe.html")
+    if request.method == "POST":
+        recipe = {
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_steps": request.form.get("recipe_steps"),
+            "recipe_allergen": request.form.get("recipe_allergen"),
+            "recipe_category": request.form.get("recipe_category"),
+            "recipe_img": request.form.get("recipe_img"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Added")
+        return redirect(url_for("recipes"))
+
+    allergens = mongo.db.allergens.find().sort("recipe_allergen", 1)
+    ingredients = mongo.db.ingredients.find().sort("recipe_ingredients", 1)
+    return render_template("add_recipe.html", allergens=allergens, ingredients=ingredients)
 
 
 if __name__ == "__main__":
