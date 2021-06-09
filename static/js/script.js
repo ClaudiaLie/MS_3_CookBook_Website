@@ -1,7 +1,7 @@
    
 $(".dropdown-trigger").dropdown();
 
-$('#textarea1').val('New Text');
+$('#textarea1').val('');
   M.textareaAutoResize($('#textarea1'));
 
 $(document).ready(function(){

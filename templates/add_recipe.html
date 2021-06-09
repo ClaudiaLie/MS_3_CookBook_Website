@@ -1,61 +1,83 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="text-shadow brown #efebe9 lighten-5"> Add Recipe </h3>
+    <h3 class="text-shadow"> Add Recipe </h3>
 
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="recipe_name" type="text" class="validate">
-              <label for="recipe_name">RECIPE NAME</label>
-            </div>
+    <div class="row card-panel grey lighten-5">
+      <form class="col s12" method="POST" action="">
+        <div class="row">
+          <div class="input-field col s12">
+            <p>Recipe name:</p>
+            <input id="recipe_name" type="text" name="recipe_name" class="validate" required>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <p>Ingredients:</p>
-                <div class="chips chips-autocomplete" id="recipe_ingredients">    
-                </div>
-                <p>(Press Enter after each ingredient)</p>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+              <p>Ingredients:</p>
+              <div class="chips chips-autocomplete" id="recipe_ingredients"></div>
+              <p>(Press Enter after each ingredient)</p>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <select multiple>
-                <option value="" disabled selected>Select the allergens</option>
-                <option value="1">Gluten</option>
-                <option value="2">Lactose</option>
-                <option value="3">Vegetarian</option>
-                <option value="3">Vegan</option>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 recipe_allergen">
+            <select multiple required>
+              <option value="" disabled selected>Click to select the allergens</option>
+              <option value="1">Gluten</option>
+              <option value="2">Lactose</option>
+              <option value="3">Tree Nuts</option>
+              <option value="3">Vegetarian</option>
+              <option value="3">Vegan</option>
             </select>
-            <label>Allergens</label>
-            </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Add a short description</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <p>Add a short description:</p>
+            <textarea id="recipe_description" class="materialize-textarea" required></textarea>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea2" class="materialize-textarea"></textarea>
-              <label for="textarea2">Describe the steps to prepare your recipe</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <p>Describe the steps to prepare your recipe:</p>
+            <textarea id="recipe_steps" class="materialize-textarea" required></textarea>
           </div>
-        </form>
-    </div> 
-
-    <form action="#">
+        </div>
+        <p>Select a category: </p>
+        <p>
+          <label>
+            <input name="group1" id="recipe.category" type="radio" />
+            <span>Appetizer</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" id="recipe.category" type="radio" />
+            <span>First Course</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" id="recipe.category" type="radio" />
+            <span>Second Course</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="group1" id="recipe.category" type="radio" />
+            <span>Dessert</span>
+          </label>
+        </p>
+        <br>
         <div class="file-field input-field">
-          <div class="btn">
-            <span>File</span>
-            <input type="file">
+          <div class="btn brown #a1887f brown lighten-1">
+            <span>Choose image</span>
+            <input type="file" name="recipe_img" id="recipe_img" required>
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload a picture of your dish!">
           </div>
         </div>
-    </form>
+      </form>
+    </div>
 
 {% endblock %}
