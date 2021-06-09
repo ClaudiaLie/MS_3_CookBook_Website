@@ -30,6 +30,7 @@
           <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
           {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           {% else %}
             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -63,6 +64,7 @@
       <li><a class="dropdown-trigger" href="{{ url_for('recipes') }}" data-target="dropdown1">Recipes<i class="material-icons right">arrow_drop_down</i></a></li>
       {% if session.user %}
         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
