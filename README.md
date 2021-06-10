@@ -54,16 +54,21 @@ In order to reach a well functioning C.R.U.D. , it is important to have a good c
 #### **Skeleton** 
 
 #### Wireframes <a name="wireframes"></a>
-![Home Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Homepage.png) "Home Page")
+The original Wireframes display the ideal Homepage, Recipe Page and Registration Page:
 
-![Recipe Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Recipe_page.png) "Recipe Page")
+**Homepage**
+![Home Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Homepage.png?raw=true)
 
-![Register page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Register.png) "Register Page")
+**Recipe Page**
+![Recipe Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Recipe_page.png?raw=true) 
+
+**Registration Page**
+![Register page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Register.png?raw=true) 
 
 #### **Surface**
 
 ## **Database Schema** <a name="dbschema"></a>
-![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg "DB Schema")  
+![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg?raw=true)  
 
 ## **Features** <a name="features"></a>
 

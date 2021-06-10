@@ -26,16 +26,16 @@
         <!-- Allergens -->
         <div class="row">
           <div class="input-field col s12">
-            <select multiple id="recipe_allergen" name="recipe_allergen" required>
+            <select multiple id="recipe_allergen" name="recipe_allergen" class="validate" required>
               <option value="" disabled selected>Click to select the allergens</option>
-              {% for ingredient in ingredients %}
+              {% for allergen in allergens %}
               <option value="{{ allergen.recipe_allergen }}">{{ allergen.recipe_allergen }}</option>
-              {% endfor %}
               <option value="1">Gluten</option>
               <option value="2">Lactose</option>
               <option value="3">Tree Nuts</option>
               <option value="3">Vegetarian</option>
               <option value="3">Vegan</option>
+              {% endfor %}
             </select>
           </div>
         </div>

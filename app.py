@@ -106,14 +106,15 @@ def recipes():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # called from the user with "Add Recipe" on the menu
     if request.method == "POST":
         recipe = {
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_ingredients": request.form.getlist("recipe_ingredients[]"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_description": request.form.get("recipe_description"),
             "recipe_steps": request.form.get("recipe_steps"),
-            "recipe_allergen": request.form.get("recipe_allergen"),
-            "recipe_category": request.form.get("recipe_category"),
+            "recipe_allergen": request.form.getlist("recipe_allergen[]"),
+            "recipe_category": request.form.getlist("recipe_category[]"),
             "recipe_img": request.form.get("recipe_img"),
             "created_by": session["user"]
         }
