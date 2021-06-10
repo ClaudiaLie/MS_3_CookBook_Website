@@ -71,7 +71,8 @@
         <li><a href="{{ url_for('login') }}">Log In</a></li>
       {% endif %}
     </ul>
-
+  </header>
+  
     <section>
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
@@ -86,8 +87,11 @@
     </section>
 
     <main class="container">
+      
       {% block content %}
+
       {% endblock %}
+
     </main>
 
   <!--jQuery-->

@@ -40,8 +40,10 @@ The main focus of A Tavola is to have a clean and intuitive website on the front
 ### **The 5 Planes of UX** <a name="planes"></a>
 
 #### **Strategy**  
+A Tavola wants to provide a reliable source of "easy to do at home" recipes, a cookbook for everyone mainly made from the users themselves thanks to the C.R.U.D. functionality.
 
 #### **Scope** 
+In order to reach a well functioning C.R.U.D. , it is important to have a good communication betweek the MongoDB Atlas cloud database and the website, but it has to be easy also for the user to understand how to access to the C.R.U.D. interactions.
 
 ##### Functional Requirements
 
