@@ -1,8 +1,74 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+A Tavola is the project submission for the Data Centric Development Milestone Project By Code Institute, it consists in a recipes website with an interactive design that allows the registered user to upload their recipes or simply search for recipes through the database. 
 
-Welcome ClaudiaLie,
+## Table of contents
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+1. [User Experience](#user-experience)
+   - [User Stories](#stories)
+   - [The 5 Planes](#planes)
+   - [Wireframes](#wireframes)
+2. [Database Schema](#dbschema)
+3. [Features](#features)
+4. [Technologies Used](#technologies)
+5. [Testing](#testing)
+6. [Database Creation](#database)
+7. [Deployment](#deployment)
+8. [Resources](#resources)
+9. [Credits](#credits)
+    - [Media](#media)
+    - [Code Snippets](#code)
+    - [Acknowledgements](#acknowledgements)
+
+## **User Experience (UX)** <a name="user-experience"></a>
+The main focus of A Tavola is to have a clean and intuitive website on the front-end, with a full user access to the C.R.U.D. functionality (Create, Read, Update and Delete) simply navigating throught the pages. In addition to that, the back-end needs a good solid structure to make the search of the recipes and the navigation easier for the user.
+
+### **User Stories** <a name="stories"></a>
+
+1. _As a_ **first time visitor**, _I need to_ **understand the purpose of the site**, _in order to_ **consider exploring the site further**.
+
+2. _As a_ **first time visitor**, _I need to_ **quickly and easily register on the site**,  _in order to_ **fully interact with the site**.
+   
+3. _As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**.
+
+4. _As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**.
+
+5. _As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**.
+
+6. _As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
+
+7.  _As a _ **site owner**, _I need to_ **have a unique feature which generates some competition between users**, _in order to_ **encourage users to post new recipes**
+
+### **The 5 Planes of UX** <a name="planes"></a>
+
+#### **Strategy**  
+
+#### **Scope** 
+
+##### Functional Requirements
+
+##### Content Requirements
+
+#### **Structure**  
+
+#### **Skeleton** 
+
+#### Wireframes <a name="wireframes"></a>
+
+#### **Surface**
+
+## **Database Schema** <a name="dbschema"></a>
+![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/readme_img/Database_schema.jpeg "DB Schema")  
+
+## **Features** <a name="features"></a>
+
+## **Technologies Used** <a name="technologies"></a> 
+
+## **Testing** <a name="testing"></a>
+
+## **Resources** <a name="resources"></a>
+
+## **Credits** <a name="credits"></a>
+
+### **Acknowledgements** <a name="acknowledgements"></a>
 
 ## Gitpod Reminders
 
@@ -31,29 +97,3 @@ To log into the Heroku toolbelt CLI:
 5. Paste in your API key when asked
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
