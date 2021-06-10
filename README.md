@@ -52,11 +52,16 @@ The main focus of A Tavola is to have a clean and intuitive website on the front
 #### **Skeleton** 
 
 #### Wireframes <a name="wireframes"></a>
+![Home Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Homepage.png) "Home Page")
+
+![Recipe Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Recipe_page.png) "Recipe Page")
+
+![Register page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Register.png) "Register Page")
 
 #### **Surface**
 
 ## **Database Schema** <a name="dbschema"></a>
-![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/readme_img/Database_schema.jpeg "DB Schema")  
+![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg "DB Schema")  
 
 ## **Features** <a name="features"></a>
 
