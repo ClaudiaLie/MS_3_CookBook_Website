@@ -25,9 +25,8 @@
         <div class="row">
           <div class="input-field col s12">
             <select multiple id="recipe_allergen" name="recipe_allergen" class="validate" required>
-              <option value="" disabled selected>Click to select the allergens</option>
               {% for allergen in allergens %}
-              <option value="{{ allergen.recipe_allergen }}">{{ allergen.recipe_allergen }}</option>
+              <option value="{{ allergen.recipe_allergen }}" disabled selected>{{ allergen.recipe_allergen }} Click to select the allergens</option>
               {% endfor %}
               <option value="Gluten">Gluten</option>
               <option value="Lactose">Lactose</option>

@@ -16,7 +16,7 @@
     {% block styles %}
     {% endblock %}
 
-    <title>Recipes</title>
+    <title>Base</title>
 </head>
 <body>
   <header>
@@ -27,7 +27,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('index') }}">Home</a></li>
-          <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+          <li><a href="{{ url_for('recipes') }}">Cookbook</a></li>
           {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>

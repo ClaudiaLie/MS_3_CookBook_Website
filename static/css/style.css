@@ -20,9 +20,19 @@ main {
     flex: 1 0 auto;
 }
 
+.recipe_row {
+    display: flex;
+    float: left;
+    width: 50%;
+}
+
 @media only screen and (max-width: 991px){
     #top-logo {
         margin-left: auto;
+    }
+
+    .recipe_row {
+        width: 100%;
     }
   
 }
