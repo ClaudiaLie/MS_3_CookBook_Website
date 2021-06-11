@@ -1,31 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <ul class="collapsible">
-        {% for recipe in recipes %} 
-        <li>
-            <div class="collapsible-header text-shadow #efebe9 brown lighten-5">
-
-                <!-- <i class="material-icons left">local_dining</i>
-                {% if recipe.recipe_allergen == true %}
-                    <i class="fas fa-hand-holding-heart tooltipped"
-                    data-position="top" data-tooltip="Allergens present in this recipe"></i>
-                {% endif %} -->
-
-                <strong>{{ recipe.recipe_name }} </strong> <hr>
-                <!-- <p> Rating: {{ recipe.recipe_rating }}</p> -->
-                <p><em>by: {{ recipe.created_by }}</em></p>
+        {% for recipe in recipes %}   
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="activator"src="{{ recipe.recipe_img }}">
+                    </div>
+                    <div class="card-content activator">
+                        <p>
+                            <strong>{{ recipe.recipe_name }} </strong> <hr>
+                            <em>by: {{ recipe.created_by }}</em> <br>
+                            <strong>{{ recipe.recipe_description }}</strong> <hr>
+                            <span> <strong>Category:</strong> {{ recipe.recipe_category }}</span> <br>
+                            <span> <strong> Ingredients:</strong> {{ recipe.recipe_ingredients}}</span> 
+                            <p> <strong> Allergens:</strong> {{ recipe.recipe_allergen }}</p>
+                            <p>{{ recipe.recipe_steps }}</p>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="collapsible-body">
-                <strong>{{ recipe.recipe_description }}</strong> <hr>
-                <span> <strong> Ingredients:</strong> {{ recipe.recipe_ingredients}}</span> 
-                <p> <strong> Allergens:</strong> {{ recipe.recipe_allergen }}</p>
-                
-                <p>{{ recipe.recipe_steps }}</p>
-            </div>
-        </li>
+        </div>
+        
         {% endfor %}
-    </ul>
 
     
 {% endblock %}

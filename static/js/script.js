@@ -10,21 +10,3 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('select').formSelect();
 });
-
-// Add Ingredients Tag
-
-$('.chips').chips();
-  $('.chips-autocomplete').chips({
-    autocompleteOptions: {
-      data: {
-        'Pasta': null,
-        'Salt': null,
-        'Pepper': null,
-        'Eggs': null,
-        'Guanciale': null,
-        'Pecorino': null
-      },
-      limit: Infinity,
-      minLength: 2
-    }
-  });

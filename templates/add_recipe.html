@@ -4,7 +4,7 @@
     <h3 class="text-shadow"> Add Recipe </h3>
 
     <div class="row card-panel grey lighten-5">
-      <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+      <form class="col s12" method="POST" enctype="multipart/form-data" action="{{ url_for('add_recipe') }}">
         <div class="row">
           <div class="input-field col s12">
             <p>Recipe name:</p>
@@ -13,14 +13,12 @@
         </div>
         <!-- Add Ingredients and send new additions to the database -->
         <div class="row">
-          <div class="input-field col s12" id="recipe_ingredients" name="recipe_ingredients">
-              <p>Ingredients:</p>
-              {% for ingredient in ingredients %}
-                <div class="chips chips-autocomplete">
-                  <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
-                </div>
-              {% endfor %}
-              <p>(Press Enter after each ingredient)</p>
+          <div class="input-field col s12">
+            <p>Ingredients:</p>
+            <input id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" required>
+            {% for ingredient in ingredients %}
+            <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
+            {% endfor %}
           </div>
         </div>
         <!-- Allergens -->
@@ -30,12 +28,12 @@
               <option value="" disabled selected>Click to select the allergens</option>
               {% for allergen in allergens %}
               <option value="{{ allergen.recipe_allergen }}">{{ allergen.recipe_allergen }}</option>
-              <option value="1">Gluten</option>
-              <option value="2">Lactose</option>
-              <option value="3">Tree Nuts</option>
-              <option value="3">Vegetarian</option>
-              <option value="3">Vegan</option>
               {% endfor %}
+              <option value="Gluten">Gluten</option>
+              <option value="Lactose">Lactose</option>
+              <option value="Tree Nuts">Tree Nuts</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Vegan">Vegan</option>
             </select>
           </div>
         </div>
@@ -43,54 +41,48 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
-            <textarea id="recipe_description" class="materialize-textarea" required></textarea>
+            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required></textarea>
           </div>
         </div>
         <!-- Steps of the recipe -->
         <div class="row">
           <div class="input-field col s12">
             <p>Describe the steps to prepare your recipe:</p>
-            <textarea id="recipe_steps" class="materialize-textarea" required></textarea>
+            <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" required></textarea>
           </div>
         </div>
         <!-- Category of the dish -->
-        <p>Select a category: </p>
-        <p>
-          <label>
-            <input name="group1" id="recipe_category" type="radio" />
-            <span>Appetizer</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" id="recipe_category" type="radio" />
-            <span>First Course</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" id="recipe_category" type="radio" />
-            <span>Second Course</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="group1" id="recipe_category" type="radio" />
-            <span>Dessert</span>
-          </label>
-        </p>
+        <div class="row">
+          <div class="input-field col s12">
+            <select multiple id="recipe_category" name="recipe_category" class="validate" required>
+              <option value="" disabled selected>Click to select the category</option>
+              {% for category in categories %}
+              <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
+              {% endfor %}
+              <option value="Appetizer">Appetizer</option>
+              <option value="First Course">First Course</option>
+              <option value="Second Course">Second Course</option>
+              <option value="Dessert">Dessert</option>
+            </select>
+          </div>
+        </div>
         <br>
         <!-- Upload an image -->
-        <div class="file-field input-field">
+        <!-- <div class="file-field input-field">
           <div class="btn brown #a1887f brown lighten-1">
             <span>Choose image</span>
-            <input type="file" name="recipe_img" id="recipe_img" required>
+            <input type="file" name="recipe_img" id="recipe_img">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text" placeholder="Upload a picture of your dish!">
           </div>
-        </div>
+        </div> -->
+         <div class="file-field input-field">
+            <p>Upload an image by URL</p>
+            <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" pattern="https://.*" class="validate">
+          </div>
         <br>
+
         <!-- Submit button -->
         <div class="row">
           <div class="col s12 center-align">
