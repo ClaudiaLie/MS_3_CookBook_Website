@@ -9,16 +9,16 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Recipe name:</p>
-            <input id="recipe_name" type="text" name="recipe_name" class="validate" required>
+            <input id="recipe_name" type="text" name="recipe_name" value="{{ recipe.recipe_name }}" class="validate" required>
           </div>
         </div>
         <!-- Add Ingredients and send new additions to the database -->
         <div class="row">
           <div class="input-field col s12">
             <p>Ingredients:</p>
-            <input id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" required>
+            <input id="recipe_ingredients" type="text" name="recipe_ingredients" value="{{ recipe.recipe_ingredients }}" class="validate" required>
             {% for ingredient in ingredients %}
-            <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
+              <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
             {% endfor %}
           </div>
         </div>
@@ -28,7 +28,11 @@
             <p>Click to select the allergens:</p>
             <select multiple id="recipe_allergen" name="recipe_allergen" class="validate" required>
               {% for allergen in allergens %}
-              <option value="{{ allergen.recipe_allergen }}" disabled selected>{{ allergen.recipe_allergen }} </option>
+                {% if allergen.recipe_allergen == recipe.recipe_allergen %}
+                  <option value="{{ allergen.recipe_allergen }}" selected>{{ allergen.recipe_allergen }}</option>
+                {% else %}
+                  <option value="{{ allergen.recipe_allergen }}" disabled>{{ allergen.recipe_allergen }} </option>
+                {% endif %}
               {% endfor %}
               <option value="Gluten">Gluten</option>
               <option value="Lactose">Lactose</option>
@@ -42,14 +46,14 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
-            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required></textarea>
+            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required>{{ recipe.recipe_description }}</textarea>
           </div>
         </div>
         <!-- Steps of the recipe -->
         <div class="row">
           <div class="input-field col s12">
             <p>Describe the steps to prepare your recipe:</p>
-            <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" required></textarea>
+            <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea" required>{{ recipe.recipe_steps }}</textarea>
           </div>
         </div>
         <!-- Category of the dish -->
@@ -58,7 +62,11 @@
             <select multiple id="recipe_category" name="recipe_category" class="validate" required>
               <option value="" disabled selected>Click to select the category</option>
               {% for category in categories %}
-              <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
+                {% if category.recipe_category == recipe.recipe_category %}
+                  <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
+                {% else %}
+                  <option value="{{ category.recipe_category }}" disabled>{{ category.recipe_category }} </option>
+                {% endif %}
               {% endfor %}
               <option value="Appetizer">Appetizer</option>
               <option value="First Course">First Course</option>
@@ -68,25 +76,19 @@
           </div>
         </div>
         <br>
-        <!-- Upload an image -->
-        <!-- <div class="file-field input-field">
-          <div class="btn brown #a1887f brown lighten-1">
-            <span>Choose image</span>
-            <input type="file" name="recipe_img" id="recipe_img">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Upload a picture of your dish!">
-          </div>
-        </div> -->
-         <div class="file-field input-field">
-            <p>Upload an image by URL</p>
-            <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" pattern="https://.*" class="validate">
-          </div>
+        <div class="file-field input-field">
+          <p>Upload an image by URL</p>
+          <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" pattern="https://.*" class="validate">
+        </div>
         <br>
 
         <!-- Submit button -->
         <div class="row">
           <div class="col s12 center-align">
+            <!-- Cancel button -->
+            <a href="{{ url_for('recipes') }}" class="btn-large orange text-shadow">
+              Cancel <i class="fas fa-times-circle right"></i>
+            </a>
             <button class="btn waves-effect waves-light btn-large center-align #a1887f brown lighten-1" type="submit">Edit Recipe
               <i class="material-icons right">restaurant_menu</i>
             </button>
