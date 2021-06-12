@@ -2,17 +2,26 @@
 {% block content %}
         <div class="row">
             <h3 class="center-align brand-logo">Cookbook</h3>
-            <!-- <div class="container">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" placeholder="Search in the Cookbook">
-                        <label class="label-icon" for="search"></label>
-                        <i class="material-icons">close</i>
+            <div class="row card-panel grey lighten-5">
+                <form action="{{ url_for('search') }}" method="POST" class="col s12">
+                    <div class="row valign-wrapper center-align">
+                        <div class="input-field col s12m8">
+                            <i class="fas fa-search prefix brown-text text-darken-4"></i>
+                            <input type="text" name="query" id="query" class="validate" required>
+                            <label for="query">Search in the Cookbook</label>
+                        </div>
+                        <div class="col s12 m4">
+                            <a href="{{ url_for('recipes') }}" class="orange btn text-shadow"> Reset </a>
+                            <button type="submit" class="orange btn text-shadow">
+                                <i class="fas fa-search left"></i> Search 
+                            </button>
+                        </div>
                     </div>
                 </form>
-            </div> -->
-            <h6 class="center-align"><br><em>(Click on the picture to read more!)</em></h6>
+            </div>
         </div>
+        {% if recipes|length > 0 %}
+        <h6 class="center-align"><br><em>(Click on the picture to read more!)</em></h6>
 
         {% for recipe in recipes %}   
         <div class="row recipe_row">
@@ -63,8 +72,11 @@
                 </div>
             </div>
         </div>
-        
         {% endfor %}
+        
+        {% else %}
+            <h3 class="orange-text text-darken-1 center align"> No Results Found </h3>
+        {% endif %}
 
     
 {% endblock %}

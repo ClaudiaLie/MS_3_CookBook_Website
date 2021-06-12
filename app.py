@@ -17,8 +17,17 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def index():
-    return render_template("index.html", title_text='A tavola')
+@app.route("/recipes")
+def recipes():
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({'$text': {'$search': query}}))
+    return render_template("recipes.html", recipes=recipes)
 
 # Registration page
 
@@ -101,11 +110,6 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
-@app.route("/recipes")
-def recipes():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
 
 # Add Recipes
 
