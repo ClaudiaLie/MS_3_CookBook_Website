@@ -7,14 +7,11 @@ A Tavola is the project submission for the Data Centric Development Milestone Pr
    - [The 5 Planes](#planes)
    - [Wireframes](#wireframes)
 2. [Database Schema](#dbschema)
-3. [Features](#features)
-4. [Technologies Used](#technologies)
-5. [Testing](#testing)
-6. [Database Creation](#database)
-7. [Deployment](#deployment)
-8. [Resources](#resources)
-9. [Credits](#credits)
-    - [Media](#media)
+3. [Technologies Used](#technologies)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Resources](#resources)
+7. [Credits](#credits)
     - [Code Snippets](#code)
     - [Acknowledgements](#acknowledgements)
 
@@ -78,44 +75,66 @@ The font for the logo follows the same idea of reading a family cookbook, handwr
 ![Font Logo](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Logo_font.png?raw=true)
 
 ## **Database Schema** <a name="dbschema"></a>
-![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg?raw=true)  
+For the data storage, the website relies on MongoDB Atlas, a fully-managed cloud database.
 
-## **Features** <a name="features"></a>
+The schema for A Tavola considers the option of different relationships between the data (one-to-many and many-to-many) but since the website has been build with a more basic structure it wasn't necessary to go in depth with that structure:
+![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg?raw=true)  
 
 ## **Technologies Used** <a name="technologies"></a> 
 
+**Core Coding**
+- HTML5
+- CSS3
+- Python
+
+**Integrations**
+- Flask
+- Jinja
+- Materialize CSS
+- Font Awesome
+- Google Fonts
+- JQuery
+
+**Database Management**
+- MongoDB Atlas
+
+**Version Control, Storage and Hosting**
+- Gitpod
+- Github
+- Heroku
+
 ## **Testing** <a name="testing"></a>
 
+- For python code testing I have been using [pep8](http://pep8online.com/)
+- For HTML validation I have used [validatorW3](https://validator.w3.org/#validate_by_input)
+- For CSS validation I have used [jigsaw.W3](https://jigsaw.w3.org/css-validator/)
+- For responsiveness testin I have used Google DevTools
+
+**Deployment** <a name="deployement"></a>
+This is a full-stack website hosted by Heroku:
+- Log In to Heroku.com
+- From the Dashboard, select "New" on the top-right of the page and then select "Create new app"
+- Choose an app name
+- Select the closest region to you
+- Click "Create app"
+
+**Heroku Deployment**
+- In the "Deployment Method" section select Github and connect your GitHub
+- Search for the Repository associated with the Heroku
+- Click "Connect"
+- Remember to enable the automatic deployment, selecting the Heroku "Deploy" tab and "Automatic Deploys"
+
 ## **Resources** <a name="resources"></a>
+Some very important resources helped to create this project:
+- Code Institute mini-project material
+- StackOverFlow
+- W3Schools
+- [Am I responsive?](http://ami.responsivedesign.is/)
+- [Dreams Time stock photos](https://www.dreamstime.com/)
+- [Color Hex](https://www.color-hex.com/)
+- [Materialize](https://materializecss.com/)
+- [Giallo Zafferano](https://www.giallozafferano.com/)
+- Google Fonts
 
 ## **Credits** <a name="credits"></a>
-
-### **Acknowledgements** <a name="acknowledgements"></a>
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+I have looked for suggestions on the README.md structure from another student beautiful project: [GazzaJ](https://github.com/GazzaJ/CI-MS3-W3Recipes)
