@@ -134,6 +134,7 @@ def add_recipe():
 
 # Edit Recipe
 
+
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -157,6 +158,7 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe, ingredients=ingredients)
 
 # Delete Recipe
+
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):

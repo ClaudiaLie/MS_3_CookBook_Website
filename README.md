@@ -29,13 +29,9 @@ The main focus of A Tavola is to have a clean and intuitive website on the front
    
 3. _As a_ **first time visitor**, _I need to_ **easily access the recipe collection**, _in order to_ **search for a recipe worth making**.
 
-4. _As a_ **returning user**, _I need_ **an interface where I can upload and save my recipes**, _in order to_ **share my favourite recipes with other site users**.
-
-5. _As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**.
+4. _As a_ **returning user**, _I need to_ **have the ability to edit or delete a recipe I have uploaded** _in order to_ **make changes to, or remove an out of date or incorrect recipe**.
 
 6. _As a _ **site owner**, _I need to_ **ensure some basic access control to edit and delete functionality**, _in order to_ **prevent unauthorised editing or deletion of user uploaded data**.
-
-7.  _As a _ **site owner**, _I need to_ **have a unique feature which generates some competition between users**, _in order to_ **encourage users to post new recipes**
 
 ### **The 5 Planes of UX** <a name="planes"></a>
 
@@ -45,16 +41,24 @@ A Tavola wants to provide a reliable source of "easy to do at home" recipes, a c
 #### **Scope** 
 In order to reach a well functioning C.R.U.D. , it is important to have a good communication betweek the MongoDB Atlas cloud database and the website, but it has to be easy also for the user to understand how to access to the C.R.U.D. interactions.
 
-##### Functional Requirements
-
-##### Content Requirements
-
 #### **Structure**  
+A Tavola website has a very simple structure. 
+The landing page is the "Cookbook", the collection of recipes in the database.
+Depending on the authentication of the user, the main navbar allows to navigate through different sections of the website, in order to give to only registered users a full access to the website.
 
 #### **Skeleton** 
+If the user is not logged in, the navbar displays three pages: 
+- **Cookbook** the main landing page, it has a search bar on the top of the page and displays all the recipes contained into the database;
+- **Register** allows through a form to register to the website;
+- **Log In** a form for users already registered who want to simply log in.
 
-#### Wireframes <a name="wireframes"></a>
-The original Wireframes display the ideal Homepage, Recipe Page and Registration Page:
+If the user is logged in, the navbar will display some additional options:
+- **Add Recipe** only the users will be able to contribute to the addition of recipes to the website;
+- **Recipe Edit/Delete** each user will be able to see on their recipe card an edit or delete button, to menage their entries.
+- **Log Out** a direct link to the log out.
+
+#### **Wireframes** <a name="wireframes"></a>
+The original Wireframes display the ideal Homepage, Recipe Page and Registration Page, definitely a goal for future additions to this project:
 
 **Homepage**
 ![Home Page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Homepage.png?raw=true)
@@ -66,6 +70,12 @@ The original Wireframes display the ideal Homepage, Recipe Page and Registration
 ![Register page](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Register.png?raw=true) 
 
 #### **Surface**
+My vision for A Tavola is an open family cookbook on a kitchen table, and I wanted to resemble through the color scheme the feeling of a warm wood table: 
+![Palette](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Palette.png?raw=true)
+
+**Typography**
+The font for the logo follows the same idea of reading a family cookbook, handwritten by each member of the family during the years. After searching through Google Fonts, I have found the perfect combination with readability and style:
+![Font Logo](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Logo_font.png?raw=true)
 
 ## **Database Schema** <a name="dbschema"></a>
 ![DB Schema](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Database_schema.jpeg?raw=true)  
