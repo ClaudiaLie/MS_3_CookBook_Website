@@ -26,9 +26,8 @@
         <a href="{{ url_for('recipes') }}" class="brand-logo" id="top-logo"> A tavola!</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('recipes') }}">Cookbook</a></li>
+          <li><a href="{{ url_for('recipes', username=session['user']) }}">Cookbook</a></li>
           {% if session.user %}
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
           {% else %}
@@ -43,9 +42,8 @@
     
     <ul class="sidenav" id="mobile-demo">
       <li><h4 class="center-align brand-logo"> A tavola </h4></li>
-      <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+      <li><a href="{{ url_for('recipes', username=session['user']) }}">Recipes</a></li>
       {% if session.user %}
-        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       {% else %}
@@ -90,8 +88,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text brand-logo">A Tavola!</h5>
-          <p> "A Tavola!" translates to "Food is Ready! Come and Eat!" <br> No matter what you are doing, when you hear "A Tavola!" you have to let yourself to have a moment with your family, gather around the table to eat something delicious. 
-          
+          <p> "A Tavola!" translates to "Food is Ready! Come and Eat!" <br> No matter what you are doing, when you hear "A Tavola!" you have to let yourself to have a moment with your family, gather around the table to eat something delicious.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Check out more:</h5>

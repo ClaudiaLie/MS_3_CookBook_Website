@@ -29,6 +29,7 @@
               {% for allergen in allergens %}
               <option value="{{ allergen.recipe_allergen }}" disabled selected>{{ allergen.recipe_allergen }} Click to select the allergens</option>
               {% endfor %}
+              <option value="No Allergens">No Allergens</option>
               <option value="Gluten">Gluten</option>
               <option value="Lactose">Lactose</option>
               <option value="Tree Nuts">Tree Nuts</option>
@@ -41,7 +42,7 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
-            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required></textarea>
+            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" maxlength="100" required></textarea>
           </div>
         </div>
         <!-- Steps of the recipe -->
@@ -67,16 +68,6 @@
           </div>
         </div>
         <br>
-        <!-- Upload an image -->
-        <!-- <div class="file-field input-field">
-          <div class="btn brown #a1887f brown lighten-1">
-            <span>Choose image</span>
-            <input type="file" name="recipe_img" id="recipe_img">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Upload a picture of your dish!">
-          </div>
-        </div> -->
          <div class="file-field input-field">
             <p>Upload an image by URL</p>
             <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" pattern="https://.*" class="validate">

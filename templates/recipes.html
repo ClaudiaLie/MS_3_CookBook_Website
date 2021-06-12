@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
         <div class="row">
             <h3 class="center-align brand-logo">Cookbook</h3>
             <div class="row card-panel grey lighten-5">
@@ -8,11 +9,11 @@
                         <div class="input-field col s12m8">
                             <i class="fas fa-search prefix brown-text text-darken-4"></i>
                             <input type="text" name="query" id="query" class="validate" required>
-                            <label for="query">Search in the Cookbook</label>
+                            <label for="query">Search</label>
                         </div>
                         <div class="col s12 m4">
-                            <a href="{{ url_for('recipes') }}" class="orange btn text-shadow"> Reset </a>
-                            <button type="submit" class="orange btn text-shadow">
+                            <a href="{{ url_for('recipes') }}" class="orange darken-4 btn text-shadow"> Reset </a>
+                            <button type="submit" class="orange darken-4 btn text-shadow ">
                                 <i class="fas fa-search left"></i> Search 
                             </button>
                         </div>
@@ -37,15 +38,13 @@
                             </span> 
                             <hr>
                             <em>by: {{ recipe.created_by }}</em> 
-                            <br>
-                            <strong>{{ recipe.recipe_description }}</strong> 
                         </p>
                     </div>
-                    <div class="col s12">
-                        {% if session.user|lower == recipe.created_by|lower %}
-                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small orange lighten-4 accent-4">Delete</a>
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small #a1887f brown lighten-1 accent-4">Edit</a>
-                        {% endif %}
+                    <div class="card-action">
+                            {% if session.user|lower == recipe.created_by|lower %}
+                                <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small orange lighten-4 accent-4">Delete</a>
+                                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small #a1887f brown lighten-1 accent-4">Edit</a>
+                            {% endif %}
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">

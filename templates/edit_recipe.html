@@ -34,6 +34,7 @@
                   <option value="{{ allergen.recipe_allergen }}" disabled>{{ allergen.recipe_allergen }} </option>
                 {% endif %}
               {% endfor %}
+              <option value="No Allergens">No Allergens</option>
               <option value="Gluten">Gluten</option>
               <option value="Lactose">Lactose</option>
               <option value="Tree Nuts">Tree Nuts</option>
@@ -46,7 +47,7 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
-            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" required>{{ recipe.recipe_description }}</textarea>
+            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" maxlength="100" required>{{ recipe.recipe_description }}</textarea>
           </div>
         </div>
         <!-- Steps of the recipe -->
