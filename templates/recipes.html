@@ -32,13 +32,12 @@
                         <img class="activator" src="{{ recipe.recipe_img }}">
                     </div>
                     <div class="card-content">
-                        <p>
-                            <span class="card-title">
-                                <strong>{{ recipe.recipe_name }} </strong>
-                            </span> 
-                            <hr>
-                            <em>by: {{ recipe.created_by }}</em> 
-                        </p>
+                        <span class="card-title">
+                            <strong>{{ recipe.recipe_name }} </strong>
+                        </span>
+                        <em>By: {{ recipe.created_by }}</em>
+                        <hr>
+                        <em>{{ recipe.recipe_description }}</em>
                     </div>
                     <div class="card-action">
                             {% if session.user|lower == recipe.created_by|lower %}

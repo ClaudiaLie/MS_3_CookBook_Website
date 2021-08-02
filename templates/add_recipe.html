@@ -9,7 +9,7 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Recipe name:</p>
-            <input id="recipe_name" type="text" name="recipe_name" class="validate" required>
+            <input id="recipe_name" type="text" name="recipe_name" maxlength="15" class="validate" required>
           </div>
         </div>
         <!-- Add Ingredients and send new additions to the database -->
@@ -42,7 +42,7 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Add a short description:</p>
-            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" maxlength="100" required></textarea>
+            <textarea id="recipe_description" name="recipe_description" class="materialize-textarea" maxlength="90" required></textarea>
           </div>
         </div>
         <!-- Steps of the recipe -->
