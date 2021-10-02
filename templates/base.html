@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-    <!-- Materialize Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  {% block styles %}
+  {% endblock %}
 
-    <title>Base</title>
+  <title>Base</title>
 </head>
 <body>
   <header>
     <!-- top navbar -->
-    <nav class="nav-extended text-shadow #a1887f brown lighten-1 fixed">
-      <div class="nav-wrapper">
-        <a href="{{ url_for('recipes') }}" class="brand-logo" id="top-logo"> A tavola!</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('recipes', username=session['user']) }}">Cookbook</a></li>
-          {% if session.user %}
-            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-          {% else %}
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+    <div class="navbar-fixed">
+      <nav class="nav-extended text-shadow #a1887f brown lighten-1">
+        <div class="nav-wrapper">
+          <a href="{{ url_for('home') }}" class="brand-logo" id="top-logo"> A tavola!</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('recipes', username=session['user']) }}">Cookbook</a></li>
+            {% if session.user %}
+              <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
+              <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+              <li><a href="{{ url_for('login') }}">Log In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
       
     <!-- mobile sidenav -->
     
@@ -53,26 +55,26 @@
     </ul>
   </header>
   
-    <section>
-    <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <div class="row flashes">
-            <h4 class="brown lighten-4 center-align">{{ message }}</h4>
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-    </section>
+  <section>
+  <!-- flash messages -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="row flashes">
+          <h4 class="brown lighten-4 center-align">{{ message }}</h4>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  </section>
 
-    <main class="container">
-      
-      {% block content %}
+  <main class="container">
+    
+    {% block content %}
 
-      {% endblock %}
+    {% endblock %}
 
-    </main>
+  </main>
 
   <!--jQuery-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
