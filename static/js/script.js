@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //autoplay carousel from: https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
 
 $('.carousel').carousel({
-    padding: 200    
+    fullWidth: true,
+    padding: 20,  
 });
 autoplay();
 function autoplay() {

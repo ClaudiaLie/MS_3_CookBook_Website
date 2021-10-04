@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="col-7 col-md-6 my-auto">
-        <div class="container-fluid h-100 w-100">
+<div class="container mb-0">
+    <div class="col-12 col-md-6 my-auto">
+        <div class="container-fluid">
             <div class="row">
                 <div class="carousel carousel-slider">
-                    <a class="carousel-item" href="{{ url_for('recipes', recipe_img=recipe.recipe_img) }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes', recipe_img=recipe.recipe_img) }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes', recipe_img=recipe.recipe_img) }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg"></a>
                 </div>
             </div>
         </div>
@@ -23,8 +23,8 @@
                     <label for="query">Search</label>
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('recipes') }}" class="orange darken-4 btn text-shadow"> Reset </a>
-                    <button type="submit" class="orange darken-4 btn text-shadow ">
+                    <a href="{{ url_for('recipes') }}" class="orange darken-4 btn btn-small text-shadow"> Reset </a>
+                    <button type="submit" class="orange darken-4 btn btn-small text-shadow ">
                         <i class="fas fa-search left"></i> Search 
                     </button>
                 </div>
@@ -32,6 +32,28 @@
         </form>
     </div>
 </div>
+{% for recipe in recipes %}
+<div class="row">
+    <h4>Latest upload:</h4>
+    <div class="col s12 m6">
+        <div class="card horizontal">
+            <div class="card-image">
+                <img src="{{ recipe.recipe_img }}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <strong>{{ recipe.recipe_name }} </strong>
+                    <br>
+                    <em>By: {{ recipe.created_by }}</em>
+                </div>
+                <div class="card-action">
+                    <a href="{{ url_for('recipes') }}">Go to the Cookbook</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 
 {% endblock %}

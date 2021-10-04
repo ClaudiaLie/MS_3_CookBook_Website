@@ -16,13 +16,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 # Index page
+# Query logic from MongoDB Documentation: https://docs.mongodb.com/manual/reference/method/db.collection.find/
+# Ascending list for the latest upload from: https://stackoverflow.com/questions/4421207/how-to-get-the-last-n-records-in-mongodb
 
 
 @app.route("/")
 @app.route("/home")
 def home():
-    recipe = mongo.db.recipes.find_one("recipe_img")
-    return render_template("home.html", recipe=recipe)
+    recipes = mongo.db.recipes.find().sort('_id', -1).limit(1)
+    return render_template("home.html", recipes=recipes)
 
 
 @app.route("/recipes")

@@ -12,8 +12,6 @@
 }
 
 body {
-    background: url('/img/home_background.jpg')no-repeat center center fixed;
-    display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
