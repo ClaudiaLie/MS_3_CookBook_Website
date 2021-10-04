@@ -1,25 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="center-align brand-logo">Cookbook</h3>
-<div class="row">
-    <div class="collection grey lighten-5">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12m8">
-                    <i class="fas fa-search prefix brown-text text-darken-4"></i>
-                    <input type="text" name="query" id="query" class="validate" required>
-                    <label for="query">Search</label>
-                </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('recipes') }}" class="orange darken-4 btn btn-small text-shadow"> Reset </a>
-                    <button type="submit" class="orange darken-4 btn btn-small text-shadow ">
-                        <i class="fas fa-search left"></i> Search 
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+
+<h4 class="center-align brand-logo">Cookbook</h4>
 
 {% if recipes|length > 0 %}
 <h6 class="center-align"><br><em>(Click on the picture to read more!)</em></h6>
@@ -76,5 +58,24 @@
     <h3 class="orange-text text-darken-1 center align"> No Results Found </h3>
 {% endif %}
 
+<div class="row">
+    <div class="collection grey lighten-5">
+        <form action="{{ url_for('search') }}" method="POST" class="col s12">
+            <div class="row valign-wrapper center-align">
+                <div class="input-field col s12m8">
+                    <i class="fas fa-search prefix brown-text text-darken-4"></i>
+                    <input type="text" name="query" id="query" class="validate" required>
+                    <label for="query">Search</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('recipes') }}" class="orange darken-4 btn btn-small text-shadow"> Reset </a>
+                    <button type="submit" class="orange darken-4 btn btn-small text-shadow ">
+                        <i class="fas fa-search left"></i> Search 
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     
 {% endblock %}

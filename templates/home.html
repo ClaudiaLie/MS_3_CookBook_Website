@@ -1,5 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
+
+<h4 class="center-align brand-logo">A Tavola!</h4>
+<br>
+<div class="container mb-0">
+    <div class="col-12 col-md-6 my-auto">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for recipe in recipes %}
+<div class="row">
+    <div class="col s12 m6">
+        <h5 class="brand-logo"><strong>Latest upload</strong></h5> <hr>
+        <div class="card horizontal">
+            <div class="card-image">
+                 <a href="{{ url_for('recipes') }}"><img src="{{ recipe.recipe_img }}"></a>
+            </div>
+            <div class="card-stacked card-content">
+                <span class="card-title"><strong>{{ recipe.recipe_name }} </strong></span>
+                <em>By: {{ recipe.created_by }}</em>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+    <div class="col s12 m6">
+        <h5 class="brand-logo"><strong>Fill the Cookbook!</strong></h5> <hr>
+        <div class="card #a1887f brown lighten-1">
+          <div class="card-content orange-text">
+            <p class="white-text">Join the A Tavola community and fill the cookbook with your recipes, 
+                or get inspired by other users.</p>
+          </div>
+          <div class="card-action">
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Log In</a>
+          </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="collection grey lighten-5">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
@@ -17,48 +63,6 @@
                 </div>
             </div>
         </form>
-    </div>
-</div>
-<div class="container mb-0">
-    <div class="col-12 col-md-6 my-auto">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="carousel carousel-slider">
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% for recipe in recipes %}
-<div class="row">
-    <div class="col s12 m6"><h5><strong>Latest upload</strong></h5>
-        <div class="card horizontal">
-            <div class="card-image">
-                 <a href="{{ url_for('recipes') }}"><img src="{{ recipe.recipe_img }}"></a>
-            </div>
-            <div class="card-stacked card-content">
-                <span class="card-title"><strong>{{ recipe.recipe_name }} </strong></span>
-                <em>By: {{ recipe.created_by }}</em>
-            </div>
-        </div>
-    </div>
-{% endfor %}
-    <div class="col s12 m6">
-        <div class="card #a1887f brown lighten-1">
-          <div class="card-content orange-text">
-            <span class="card-title"><strong> Fill the Cookbook!</strong></span>
-            <p class="white-text">Join the A Tavola community and fill the cookbook with your recipes, 
-                or get inspired by other users.</p>
-          </div>
-          <div class="card-action">
-            <a href="{{ url_for('register') }}">Register</a>
-            <a href="{{ url_for('login') }}">Log In</a>
-          </div>
-        </div>
     </div>
 </div>
 

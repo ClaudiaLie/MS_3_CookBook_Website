@@ -5,7 +5,7 @@
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-    <h4 class="center-align"> Register now! </h4>
+    <h4 class="center-align brand-logo"> Register now! </h4>
         <div class="row">
             <div class="input-field col s6">
                 <input id="first_name" name="first_name" type="text" class="validate" required>
@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <p class="center-align">
-                <button type="submit" class="waves-effect waves-light orange darken-4 btn-large"><i class="material-icons left">local_dining</i>Register</button>
+                <button type="submit" class="waves-effect waves-light orange darken-4 btn"><i class="material-icons left">local_dining</i>Register</button>
             </p>
         </div>
     </form>
@@ -46,7 +46,7 @@
     <div class="col s12">
         <p class="center-align">Already Registered?</p>
         <p class="center-align">
-            <a href="{{ url_for('login') }}" class="waves-effect waves-light orange darken-4 btn-large">Log In Here</a>
+            <a href="{{ url_for('login') }}" class="waves-effect waves-light orange darken-4 btn">Log In Here</a>
         </p>
     </div>
 </div>
