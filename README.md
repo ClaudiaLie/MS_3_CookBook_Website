@@ -83,9 +83,11 @@ My vision for A Tavola is an open family cookbook on a kitchen table, and I want
 ![Palette](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Palette.png?raw=true)
 
 **Typography**
+
 The font for the logo follows the same idea of reading a family cookbook, handwritten by each member of the family during the years. After searching through Google Fonts, I have found the perfect combination with readability and style:
 
 ![Font Logo](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/Logo_font.png?raw=true)
+
 
 ## **Database Schema** <a name="dbschema"></a>
 

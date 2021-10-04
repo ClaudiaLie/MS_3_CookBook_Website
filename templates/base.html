@@ -25,7 +25,7 @@
       <nav class="nav-extended text-shadow #a1887f brown lighten-1">
         <div class="nav-wrapper">
           <a href="{{ url_for('home') }}" class="brand-logo" id="top-logo"> A tavola!</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{{ url_for('recipes', username=session['user']) }}">Cookbook</a></li>
             {% if session.user %}
@@ -44,6 +44,7 @@
     
     <ul class="sidenav" id="mobile-demo">
       <li><h4 class="center-align brand-logo"> A tavola </h4></li>
+      <li><a href="{{ url_for('home') }}"> Home</a></li>
       <li><a href="{{ url_for('recipes', username=session['user']) }}">Recipes</a></li>
       {% if session.user %}
         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
