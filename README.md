@@ -1,4 +1,4 @@
-![A Tavola](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/a_tavola_responsive.png?raw=true)
+![A Tavola](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/a_tavola_responsive.jpg?raw=true)
 
 A Tavola is the project submission for the Data Centric Development Milestone Project By Code Institute, it consists in a recipes website with an interactive design that allows the registered user to upload their recipes or simply search for recipes through the database. 
 
