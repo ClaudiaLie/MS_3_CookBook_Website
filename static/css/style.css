@@ -33,7 +33,7 @@ main {
 
 @media only screen and (max-width: 991px){
     #top-logo {
-        margin-left: auto;
+        display: none !important;
     }
 
     .recipe_row {
