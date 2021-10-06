@@ -46,20 +46,28 @@ In order to reach a well functioning C.R.U.D. , it is important to have a good c
 #### **Structure**  
 
 A Tavola website has a very simple structure. 
-The landing page is the "Cookbook", the collection of recipes in the database.
-Depending on the authentication of the user, the main navbar allows to navigate through different sections of the website, in order to give to only registered users a full access to the website.
+The landing page is the Home page which presents the main content of the website to the user: 
+- A carousel gallery with some of the dishes in the Cookbook;
+- A card with the latest uploaded recipe;
+- A card with direct links to the registration form and the Log In page.
+
+For bigger screens the navigation menu is on the top right, while on mobile devices and smaller screens, the user can navigate through a dropdown menu on the top left corner.
+
+The main content of the website is in the "Cookbook"; the Cookbook page displays with cards all the collection of recipes in the database.
+
+If the user is registered and authenticated, the main navbar will include the Add Recipe page, in order to give to only registered users the option to add new recipes through a dedicated form.
 
 #### **Skeleton** 
 
 If the user is not logged in, the navbar displays three pages: 
-- **Cookbook** the main landing page, it has a search bar on the top of the page and displays all the recipes contained into the database;
+- **Cookbook** has a search bar on the top of the page and displays all the recipes contained into the database;
 - **Register** allows through a form to register to the website;
-- **Log In** a form for users already registered who want to simply log in.
+- **Log In** contains a form for users already registered who want to simply log in.
 
 If the user is logged in, the navbar will display some additional options:
-- **Add Recipe** only the users will be able to contribute to the addition of recipes to the website;
-- **Recipe Edit/Delete** each user will be able to see on their recipe card an edit or delete button, to menage their entries.
-- **Log Out** a direct link to the log out.
+- **Add Recipe** contains a form to add a new recipe on the website and in the database. Only the registered users will be able to contribute to the addition of recipes to the website;
+- **Recipe Edit/Delete inside their recipe card** so each user will be able to see on their recipe card an edit or delete button, to menage their entries.
+- **Log Out** is a direct link to the log out.
 
 #### **Wireframes** <a name="wireframes"></a>
 
