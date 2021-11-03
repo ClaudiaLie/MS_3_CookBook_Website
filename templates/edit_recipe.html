@@ -64,15 +64,15 @@
               <option value="" disabled selected>Click to select the category</option>
               {% for category in categories %}
                 {% if category.recipe_category == recipe.recipe_category %}
-                  <option value="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
+                  <option value="{{ category.recipe_category }}" label="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
                 {% else %}
-                  <option value="{{ category.recipe_category }}" disabled>{{ category.recipe_category }} </option>
+                  <option value="{{ category.recipe_category }}" label="{{ category.recipe_category }}" disabled>{{ category.recipe_category }} </option>
                 {% endif %}
               {% endfor %}
-              <option value="Appetizer">Appetizer</option>
-              <option value="First Course">First Course</option>
-              <option value="Second Course">Second Course</option>
-              <option value="Dessert">Dessert</option>
+              <option value="Appetizer" label="Appetizer">Appetizer</option>
+              <option value="First Course" label="First Course">First Course</option>
+              <option value="Second Course" label="Second Course">Second Course</option>
+              <option value="Dessert" label="Dessert">Dessert</option>
             </select>
           </div>
         </div>

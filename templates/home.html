@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="carousel carousel-slider">
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg"></a>
-                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/espresso-coffee-cup-beans-vintage-table-90374872.jpg" alt="espresso"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/parmigiana-eggplant-dish-14440960.jpg" alt="parmigiana"></a>
+                    <a class="carousel-item" href="{{ url_for('recipes') }}"><img src="https://thumbs.dreamstime.com/z/fish-steak-baked-lemon-herbs-foil-rosemary-oil-home-healthy-home-made-meal-food-91342310.jpg" alt="bream"></a>
                 </div>
             </div>
         </div>
@@ -19,23 +19,23 @@
 
 {% for recipe in recipes %}
 <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m12 l6">
         <h5 class="brand-logo"><strong>Latest upload</strong></h5> <hr>
         <div class="card horizontal">
             <div class="card-image">
-                 <a href="{{ url_for('recipes') }}"><img src="{{ recipe.recipe_img }}"></a>
+                 <a href="{{ url_for('recipes') }}"><img src="{{ recipe.recipe_img }}" alt="recipeimg" style="min-block-size: 12em; min-width: 11em;"></a>
             </div>
-            <div class="card-stacked card-content">
-                <span class="card-title"><strong>{{ recipe.recipe_name }} </strong></span>
+            <div class="card-stacked card-content" style="padding: 30px;">
+                <span class="card-title" style="font-size: large;"><strong>{{ recipe.recipe_name }} </strong></span>
                 <em>By: {{ recipe.created_by }}</em>
             </div>
         </div>
     </div>
 {% endfor %}
-    <div class="col s12 m6">
+    <div class="col s12 s12 l6">
         <h5 class="brand-logo"><strong>Fill the Cookbook!</strong></h5> <hr>
         <div class="card #a1887f brown lighten-1">
-          <div class="card-content orange-text">
+          <div class="card-content orange-text" style="min-height: 8em;">
             <p class="white-text">Join the A Tavola community and fill the cookbook with your recipes, 
                 or get inspired by other users.</p>
           </div>
