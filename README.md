@@ -143,20 +143,79 @@ The schema for A Tavola considers the option of different relationships between 
 
 **Deployment** <a name="deployement"></a>
 
-This is a full-stack website hosted by Heroku:
+This is a full-stack website created on Gitpod, with commits pushed directly to the GitHub repository. 
+The project has been deployed to Heroku, which was synchronized to GitHub to update the live site.
+
+**GitHub**
+
+To clone the project from GitHub:
+
+- From the Repository page, click the green GitHub button
+- From the top of the Repository, Select the Code dropdown menu and select the preferred option:
+    1. Download Zip and run locally. Remember to install any required module and freeze it in requirements.txt and to save all your secret keys in an env.py file.
+    2. Open the Repository directly with GitHub Desktop.
+
+**Heroku**
+
 - Log In to Heroku.com
 - From the Dashboard, select "New" on the top-right of the page and then select "Create new app"
-- Choose an app name
+- Choose a unique app name
 - Select the closest region to you
 - Click "Create app"
 
 **Heroku Deployment**
-- In the "Deployment Method" section select Github and connect your GitHub
+
+- In the "Deploy" section select in "Deployment Method" GitHub and connect your GitHub
 - Search for the Repository associated with the Heroku
 - Click "Connect"
 - Remember to enable the automatic deployment, selecting the Heroku "Deploy" tab and "Automatic Deploys"
+- Create a requirement.txt file in the CLI of your environment
+
+    `$ pip3 freeze --local > requirements.txt`
+
+- Create a Procfile
+
+    `$ echo web: python run.py > Procfile`
+
+    + Add app.py in the Procfile
+
+        `web: python app.py`
+
+- Now you can commit all the changes and push to GitHub
+
+    `$ git add .`
+    `$ git commit -m <'your commit message'>`
+    `$ git push`
+
+    If you created your app on the website you will need to initialize your Heroku git remote using the following command
+
+    `$ heroku git:remote -a xeption`
+
+    Then use the following command to push to Heroku
+
+    `$ git push heroku master`
+
+- In your Heroku app profile, go to Settings and scroll down to the Config Var
+
+    ![Config](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/herokuconfig.jpg?raw=true)
+
+- Click on Reveal Config Var and set your variables in the Config Var section
+
+    ![ConfigVar](https://github.com/ClaudiaLie/MS_3_CookBook_Website/blob/master/readme_img/herokuconfigvars.jpg?raw=true)
+
+     + Follow the schema below to set your variables:
+
+        | config vars   | values                                                                                                                |
+        | ------------- |-------------                                                                                                          |
+        | IP            | 0.0.0.0                                                                                                               |
+        | MONGO_URI     | mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority      | 
+        | PORT          | 5000                                                                                                                  |
+        | SECRET        | <your_secret_key>                                                                                                     |
+        
+        These variables are the same that your local env.py file must contain
 
 ## **Resources** <a name="resources"></a>
+
 Some very important resources helped to create this project:
 - Code Institute mini-project material
 - StackOverFlow
