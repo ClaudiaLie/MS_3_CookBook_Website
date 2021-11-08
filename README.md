@@ -20,7 +20,7 @@ A Tavola is the project submission for the Data Centric Development Milestone Pr
 
 ## **User Experience (UX)** <a name="user-experience"></a>
 
-The main focus of A Tavola is to have a clean and intuitive website on the front-end, with a full user access to the C.R.U.D. functionality (Create, Read, Update and Delete) simply navigating throught the pages. In addition to that, the back-end needs a good solid structure to make the search of the recipes and the navigation easier for the user.
+The main focus of A Tavola is to have a clean and intuitive website on the front-end, with a full user access to the C.R.U.D. functionality (Create, Read, Update and Delete) simply navigating through the pages. In addition to that, the back-end needs a good solid structure to make the search of the recipes and the navigation easier for the user.
 
 ### **User Stories** <a name="stories"></a>
 
@@ -42,7 +42,7 @@ A Tavola wants to provide a reliable source of "easy to do at home" recipes, a c
 
 #### **Scope** 
 
-In order to reach a well functioning C.R.U.D. , it is important to have a good communication betweek the MongoDB Atlas cloud database and the website, but it has to be easy also for the user to understand how to access to the C.R.U.D. interactions.
+In order to reach a well functioning C.R.U.D. , it is important to have a good communication between the MongoDB Atlas cloud database and the website, but it has to be easy also for the user to understand how to access to the C.R.U.D. interactions.
 
 #### **Structure**  
 
@@ -170,7 +170,7 @@ Remember to install any required module and freeze it in requirements.txt with:
 
 For further information about cloning, consult [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
-For further information about forking a repository, consult [GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+For further information about forking a repository, consult [GitHub Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 **Connect to MongoDB**
 
@@ -253,7 +253,7 @@ Save all your secret keys in env.py:
         | PORT          | 5000                                                                                                                  |
         | SECRET        | <your_secret_key>                                                                                                     |
         
-        These variables are the same that your local env.py file must contain
+        These variables are the same that your local env.py file must contain.
 
 ## **Resources** <a name="resources"></a>
 
