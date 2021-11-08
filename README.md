@@ -16,8 +16,7 @@ A Tavola is the project submission for the Data Centric Development Milestone Pr
 5. [Deployment](#deployment)
 6. [Resources](#resources)
 7. [Credits](#credits)
-    - [Code Snippets](#code)
-    - [Acknowledgements](#acknowledgements)
+
 
 ## **User Experience (UX)** <a name="user-experience"></a>
 
@@ -141,7 +140,7 @@ The schema for A Tavola considers the option of different relationships between 
 - For CSS validation I have used [jigsaw.W3](https://jigsaw.w3.org/css-validator/)
 - For responsiveness testing I have used Google DevTools
 
-**Deployment** <a name="deployement"></a>
+## **Deployment** <a name="deployment"></a>
 
 This is a full-stack website created on Gitpod, with commits pushed directly to the GitHub repository. 
 The project has been deployed to Heroku, which was synchronized to GitHub to update the live site.
@@ -228,4 +227,7 @@ Some very important resources helped to create this project:
 - Google Fonts
 
 ## **Credits** <a name="credits"></a>
-I have looked for suggestions on the README.md structure from another student beautiful project: [GazzaJ](https://github.com/GazzaJ/CI-MS3-W3Recipes)
+- I have looked for suggestions on the README.md structure from another student beautiful project: [GazzaJ](https://github.com/GazzaJ/CI-MS3-W3Recipes)
+- All the code snippets taken from other sources are highlighted in the files, these include:
+    - This [Stack Overflow post](https://stackoverflow.com/questions/4421207/how-to-get-the-last-n-records-in-mongodb) for the "Latest upload" card in the homepage
+    - Horizontal Cards from [Bootstrap](https://getbootstrap.com/docs/4.3/components/card/#horizontal)

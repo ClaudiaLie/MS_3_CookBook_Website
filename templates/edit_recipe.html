@@ -16,9 +16,8 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Ingredients:</p>
-            <input id="recipe_ingredients" type="text" name="recipe_ingredients" value="{{ recipe.recipe_ingredients }}" class="validate" required>
             {% for ingredient in ingredients %}
-              <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
+            <input id="recipe_ingredients" type="text" name="recipe_ingredients" value="{{ recipe.recipe_ingredients }}" class="validate" required>
             {% endfor %}
           </div>
         </div>
@@ -61,7 +60,7 @@
         <div class="row">
           <div class="input-field col s12">
             <select multiple id="recipe_category" name="recipe_category" class="validate" required>
-              <option value="" disabled selected>Click to select the category</option>
+              <option value="Category" disabled selected>Click to select the category</option>
               {% for category in categories %}
                 {% if category.recipe_category == recipe.recipe_category %}
                   <option value="{{ category.recipe_category }}" label="{{ category.recipe_category }}" selected>{{ category.recipe_category }}</option>
