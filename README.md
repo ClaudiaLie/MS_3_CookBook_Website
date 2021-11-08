@@ -143,6 +143,7 @@ The schema for A Tavola considers the option of different relationships between 
 ## **Deployment** <a name="deployment"></a>
 
 This is a full-stack website created on Gitpod, with commits pushed directly to the GitHub repository. 
+
 The project has been deployed to Heroku, which was synchronized to GitHub to update the live site.
 
 **GitHub**
@@ -151,8 +152,49 @@ To clone the project from GitHub:
 
 - From the Repository page, click the green GitHub button
 - From the top of the Repository, Select the Code dropdown menu and select the preferred option:
-    1. Download Zip and run locally. Remember to install any required module and freeze it in requirements.txt and to save all your secret keys in an env.py file.
+    1. Download Zip and run locally. 
     2. Open the Repository directly with GitHub Desktop.
+    3. Copy the URL link and clone locally.
+
+In case the third option was chosen:
+- After copying the URL, open your terminal.
+- Change the working directory to the preferred location for the cloned directory.
+- To clone the project, paste the copied URL after "git clone" in your CLI:
+
+    `$ git clone https://github.com/Username/repository-name`
+
+Remember to install any required module and freeze it in requirements.txt with:
+    
+`$ pip3 install -r requirements.txt`
+
+
+For further information about cloning, consult [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+For further information about forking a repository, consult [GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
+**Connect to MongoDB**
+
+- Select your Database Deployment
+- In your Overview page select Connect on the top right of the page
+- A list of connection methods will pop-up, select "Connect your Application"
+- Select Python as "Driver" and 3.6 or later as "Version"
+- Following the instructions, replace < password > with the password for the root user and "myFirstDatabase" with the name of the database that connection will be use by default
+
+**Local Environment**
+
+Create an env.py file
+
+`$ git touch env.py`
+
+Save all your secret keys in env.py:
+
+        import os
+
+        os.environ.setdefault("IP", "0.0.0.0")
+        os.environ.setdefault("PORT", "5000")
+        os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+        os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+        os.environ.setdefault("MONGO_DBNAME", "a_tavola")
 
 **Heroku**
 
