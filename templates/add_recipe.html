@@ -16,9 +16,8 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Ingredients:</p>
-            <input id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" required>
             {% for ingredient in ingredients %}
-            <option value="{{ ingredient.recipe_ingredients }}">{{ ingredient.recipe_ingredients }}</option>
+            <input id="recipe_ingredients" type="text" name="recipe_ingredients" class="validate" value="{{ ingredient.recipe_ingredients }}" required>
             {% endfor %}
           </div>
         </div>
@@ -70,7 +69,7 @@
         <br>
          <div class="file-field input-field">
             <p>Upload an image by URL</p>
-            <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" pattern="https://.*" class="validate">
+            <input placeholder="Paste the image URL" type="url" name="recipe_img" id="recipe_img" onchange="addImage();" required pattern="https://.*" class="validate">
           </div>
         <br>
 
